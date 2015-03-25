@@ -1,0 +1,14 @@
+{
+  "name": "angular-dyalna-identity",
+  "version": "1.0.0",
+  "authors": [
+    "Riad Benguella <riad@rizeway.com>"
+  ],
+  "description": "Angular Client to Dyalna Identity SSO Server",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.3.14",
+    "angular-ui-router": "~0.2.13",
+    "angular-cookies": "~1.3.15"
+  }
+}
