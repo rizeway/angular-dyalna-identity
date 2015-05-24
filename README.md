@@ -46,6 +46,7 @@ Install & configure
 
  - Password Lost Directive (email form)
  - Password regeneration Directive
+ - Password modification
 
 Details
 -------

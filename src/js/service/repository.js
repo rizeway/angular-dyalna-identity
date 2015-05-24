@@ -20,4 +20,10 @@ export class DyalnaIdentityRepository {
   regeneratePassword(token) {
     return this.$http.put(this.DyalnaIdentityConfig.host + '/regeneratePassword?token=' + token);
   }
+
+  changePassword(password) {
+    return this.$http.put(this.DyalnaIdentityConfig.host + '/changePassword', {
+      password: password
+    });
+  }
 }
