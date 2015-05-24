@@ -42,6 +42,10 @@ Install & configure
 
     <dyalna-identity-confirm token="ctrl.token" template-url="core/user/confirm.html"></dyalna-identity-confirm>
 
+6- Other available directives
+
+ - Password Lost Directive (email form)
+ - Password regeneration Directive
 
 Details
 -------

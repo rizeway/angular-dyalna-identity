@@ -1,8 +1,9 @@
-/* @ngInject */
 class DyalnaIdentityLoginController {
+  /* @ngInject */
   constructor($scope, $state, DyalnaIdentity, DyalnaIdentityConfig, DyalnaIdentityReferrer) {
     this.error    = false;
     this.ready  = false;
+    this.lostPasswordState = DyalnaIdentityConfig.lostPasswordState;
 
     this.$state = $state;
     this.DyalnaIdentityReferrer = DyalnaIdentityReferrer;
@@ -39,7 +40,7 @@ class DyalnaIdentityLoginController {
   }
 }
 
-export function DyalnaIdentityLoginFormDirective() {
+export /* @ngInject */ function DyalnaIdentityLoginFormDirective() {
   return {
     restrict: 'E',
     scope: true,
@@ -51,8 +52,7 @@ export function DyalnaIdentityLoginFormDirective() {
   };
 }
 
-/* @ngInject */
-export function DyalnaIdentityLoginTemplate($templateCache) {
+export /* @ngInject */ function DyalnaIdentityLoginTemplate($templateCache) {
   $templateCache.put('dyalna-identity/login.html',
     '<form class="login-form" ng-show="ctrl.ready"ng-submit="ctrl.submit()">' +
         '<div class="alert alert-error" ng-show="ctrl.error">' +
@@ -61,7 +61,8 @@ export function DyalnaIdentityLoginTemplate($templateCache) {
         '</div>' +
         '<input type="text" placeholder="Username" ng-model="ctrl.username" />' +
         '<input type="password" placeholder="Password" ng-model="ctrl.password" />' +
-        '<input type="submit" value="Login" />'+
+        '<input type="submit" value="Login" />' +
+        '<a ui-sref="{{ ctrl.lostPasswordState }}">Lost Password</a>' +
     '</form>'
   );
 }

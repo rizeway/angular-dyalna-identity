@@ -10,6 +10,7 @@ export class DyalnaIdentityConfigProvider {
       unauthorizedState: 'unauthorized',
       targetState: 'home',
       loginState: 'login',
+      lostPasswordState: 'lost-password',
       tokenName: 'authtoken'
     };
   }
@@ -28,6 +29,7 @@ export class DyalnaIdentityConfigProvider {
       targetState: this.config.targetState,
       loginState: this.config.loginState,
       unauthorizedState: this.config.unauthorizedState,
+      lostPasswordState: this.config.lostPasswordState,
       tokenName: this.config.tokenName,
     };
   }

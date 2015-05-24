@@ -7,6 +7,8 @@ import {DyalnaIdentityRepository} from './service/repository';
 import {DyalnaIdentityLoginFormDirective, DyalnaIdentityLoginTemplate} from './directive/login';
 import {DyalnaIdentityRegisterFormDirective, DyalnaIdentityRegisterTemplate} from './directive/register';
 import {DyalnaIdentityConfirmDirective, DyalnaIdentityConfirmTemplate} from './directive/confirm';
+import {DyalnaIdentityLostPasswordDirective, DyalnaIdentityLostPasswordTemplate} from './directive/lost-password';
+import {DyalnaIdentityRegeneratePasswordDirective, DyalnaIdentityRegeneratePasswordTemplate} from './directive/regenerate-password';
 export var DyalnaIdentityModule = 'dyalna.identity';
 angular
   .module(DyalnaIdentityModule, ['ui.router', 'ngCookies'])
@@ -15,6 +17,8 @@ angular
   .run(DyalnaIdentityLoginTemplate)
   .run(DyalnaIdentityRegisterTemplate)
   .run(DyalnaIdentityConfirmTemplate)
+  .run(DyalnaIdentityLostPasswordTemplate)
+  .run(DyalnaIdentityRegeneratePasswordTemplate)
   .provider('DyalnaIdentityConfig', DyalnaIdentityConfigProvider)
   .service('DyalnaIdentity', DyalnaIdentity)
   .service('DyalnaIdentityReferrer', DyalnaIdentityReferrer)
@@ -22,4 +26,6 @@ angular
   .directive('dyalnaIdentityLoginForm', DyalnaIdentityLoginFormDirective)
   .directive('dyalnaIdentityRegisterForm', DyalnaIdentityRegisterFormDirective)
   .directive('dyalnaIdentityConfirm', DyalnaIdentityConfirmDirective)
+  .directive('dyalnaIdentityLostPassword', DyalnaIdentityLostPasswordDirective)
+  .directive('dyalnaIdentityRegeneratePassword', DyalnaIdentityRegeneratePasswordDirective)
 ;
