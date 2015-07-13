@@ -1,5 +1,5 @@
-/* @ngInject */
 class DyalnaIdentityConfirmController {
+  /* @ngInject */
   constructor($scope, DyalnaIdentityRepository) {
     this.loading = true;
     DyalnaIdentityRepository.confirm($scope.token).then(() => {
@@ -12,8 +12,7 @@ class DyalnaIdentityConfirmController {
   }
 }
 
-/* @ngInject */
-export function DyalnaIdentityConfirmDirective() {
+export /* @ngInject */ function DyalnaIdentityConfirmDirective() {
   return {
     restrict: 'E',
     scope: {
@@ -27,8 +26,7 @@ export function DyalnaIdentityConfirmDirective() {
   };
 }
 
-/* @ngInject */
-export function DyalnaIdentityConfirmTemplate($templateCache) {
+export /* @ngInject */ function DyalnaIdentityConfirmTemplate($templateCache) {
   $templateCache.put('dyalna-identity/confirm.html',
     '<div ng-if="ctrl.loading" class="bs-callout bs-callout-info">' +
           '<i ng-if="ctrl.loading" class="glyphicon glyphicon-refresh spin"></i>' +

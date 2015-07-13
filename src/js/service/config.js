@@ -1,5 +1,5 @@
-/* @ngInject */
 export class DyalnaIdentityConfigProvider {
+  /* @ngInject */
   constructor() {
     this.config = {
       host: '/identity',

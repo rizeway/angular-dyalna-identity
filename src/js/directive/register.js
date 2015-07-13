@@ -1,5 +1,5 @@
-/* @ngInject */
 class DyalnaIdentityRegisterController {
+  /* @ngInject */
   constructor(DyalnaIdentityRepository) {
     this.DyalnaIdentityRepository = DyalnaIdentityRepository;
     this.user = {};
@@ -29,8 +29,7 @@ class DyalnaIdentityRegisterController {
   }
 }
 
-/* @ngInject */
-export function DyalnaIdentityRegisterFormDirective() {
+export /* @ngInject */ function DyalnaIdentityRegisterFormDirective() {
   return {
     restrict: 'E',
     scope: true,
@@ -42,8 +41,7 @@ export function DyalnaIdentityRegisterFormDirective() {
   };
 }
 
-/* @ngInject */
-export function DyalnaIdentityRegisterTemplate($templateCache) {
+export /* @ngInject */ function DyalnaIdentityRegisterTemplate($templateCache) {
   $templateCache.put('dyalna-identity/register.html',
       '<div ng-if="ctrl.error" class="alert alert-danger">' +
           'An error occured while registering. Check your informations' +

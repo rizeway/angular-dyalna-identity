@@ -1,5 +1,4 @@
-/* @ngInject */
-export function DyalnaStateChangeConfig($rootScope, $state, DyalnaIdentity, DyalnaIdentityConfig, DyalnaIdentityReferrer) {
+export /* @ngInject */ function DyalnaStateChangeConfig($rootScope, $state, DyalnaIdentity, DyalnaIdentityConfig, DyalnaIdentityReferrer) {
   $rootScope.$on('$stateChangeStart', (event, nextState, nextParams) => {
     var security = nextState.security === undefined || nextState.security;
     if (!DyalnaIdentity.authorize(security)) {

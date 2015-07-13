@@ -1,5 +1,4 @@
-/* @ngInject */
-export function DyalnaIdentityHttpInterceptor($httpProvider) {
+export /* @ngInject */ function DyalnaIdentityHttpInterceptor($httpProvider) {
     // alternatively, register the interceptor via an anonymous factory
     $httpProvider.interceptors.push(/* @ngInject */ function($cookies, DyalnaIdentityConfig) {
       return {

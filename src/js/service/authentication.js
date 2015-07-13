@@ -1,5 +1,5 @@
-/* @ngInject */
 export class DyalnaIdentity {
+  /* @ngInject */
   constructor($q, $http, $rootScope, $cookies, DyalnaIdentityConfig) {
     this.user = null;
     this.lastUser = null;

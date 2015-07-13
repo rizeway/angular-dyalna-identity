@@ -1,5 +1,5 @@
-/* @ngInject */
 export class DyalnaIdentityReferrer {
+  /* @ngInject */
   constructor() {
     this.referer = false;
   }
