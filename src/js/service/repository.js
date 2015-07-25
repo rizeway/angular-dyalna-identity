@@ -6,7 +6,7 @@ export class DyalnaIdentityRepository {
   }
 
   register(user) {
-    return this.$http.post(this.DyalnaIdentityConfig.host + '/register', user).then((response) => response.data.data);
+    return this.$http.post(this.DyalnaIdentityConfig.host + '/register?domain=' + this.DyalnaIdentityConfig.domain, user).then((response) => response.data.data);
   }
 
   confirm(token) {
@@ -14,7 +14,7 @@ export class DyalnaIdentityRepository {
   }
 
   lostPassword(email) {
-    return this.$http.put(this.DyalnaIdentityConfig.host + '/lostPassword?email=' + email);
+    return this.$http.put(this.DyalnaIdentityConfig.host + '/lostPassword?email=' + email + '&domain=' + this.DyalnaIdentityConfig.domain);
   }
 
   regeneratePassword(token) {
