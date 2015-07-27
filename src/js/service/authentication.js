@@ -27,14 +27,14 @@ export class DyalnaIdentity {
         username: username,
         password: password
       }).then(response => {
-        this.$cookies[this.DyalnaIdentityConfig.tokenName] = response.data.token;
+        this.$cookies.put(this.DyalnaIdentityConfig.tokenName, response.data.token);
         return this.check();
       });
   }
 
   logout() {
     return this.$http.get(this.DyalnaIdentityConfig.host + this.DyalnaIdentityConfig.logoutUrl).then(() => {
-      this.$cookies[this.DyalnaIdentityConfig.tokenName] = null;
+      this.$cookies.remove(this.DyalnaIdentityConfig.tokenName);
       this.user = null;
       this.$rootScope.$broadcast('DyalnaIdentity.logout');
       return 'ok';
@@ -54,7 +54,7 @@ export class DyalnaIdentity {
       defer.resolve(this.user);
     }, () => {
       if (this.user !== null) {
-          this.$cookies[this.DyalnaIdentityConfig.tokenName] = null;
+          this.$cookies.remove(this.DyalnaIdentityConfig.tokenName);
           this.$rootScope.$broadcast('DyalnaIdentity.logout');
       }
       this.user = null;

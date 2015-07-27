@@ -3,7 +3,7 @@ export /* @ngInject */ function DyalnaIdentityHttpInterceptor($httpProvider) {
     $httpProvider.interceptors.push(/* @ngInject */ function($cookies, DyalnaIdentityConfig) {
       return {
         request: function(config) {
-          var token = $cookies[DyalnaIdentityConfig.tokenName];
+          var token = $cookies.get(DyalnaIdentityConfig.tokenName);
           if (token) {
             if (!config.headers) {
               config.headers = {};
